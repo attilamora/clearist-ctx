@@ -1,0 +1,1096 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clearist CTX | Clinical Acne Skincare by Skeyndor</title>
+  <meta name="description" content="51% fewer breakouts in 28 days. Clearist CTX is clinical-grade acne skincare that targets the stress-skin connection. Book your free consultation.">
+  <style>
+    @font-face { font-family:'DIN 2014'; src:url('assets/fonts/din-2014-extralight.otf') format('opentype'); font-weight:200; font-display:swap; }
+    @font-face { font-family:'DIN 2014'; src:url('assets/fonts/din-2014-light.ttf') format('truetype'); font-weight:300; font-display:swap; }
+    @font-face { font-family:'DIN 2014'; src:url('assets/fonts/din-2014-bold.ttf') format('truetype'); font-weight:700; font-display:swap; }
+    @font-face { font-family:'DIN Pro'; src:url('assets/fonts/dinpro-regular.otf') format('opentype'); font-weight:400; font-display:swap; }
+    @font-face { font-family:'DIN Pro'; src:url('assets/fonts/dinpro-medium.otf') format('opentype'); font-weight:500; font-display:swap; }
+    @font-face { font-family:'DIN Pro'; src:url('assets/fonts/dinpro-bold.otf') format('opentype'); font-weight:700; font-display:swap; }
+    @font-face { font-family:'Minion Pro'; src:url('assets/fonts/minion-regular.otf') format('opentype'); font-weight:400; font-display:swap; }
+
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+    :root{
+      --g:#3BB896;--gd:#2E9A7C;--g10:rgba(59,184,150,0.1);
+      --m50:#F7FBFA;--m100:#EFF9F3;--m200:#E0F0E8;--m300:#C1E0D0;
+      --d:#2D2D3A;--ds:#5A5A6A;--dm:#8A8A9A;--w:#FFFFFF;--db:#0C1118;
+      --gap:clamp(80px,12vh,150px);--pad:clamp(20px,5vw,60px);--max:1100px;
+    }
+    html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}
+    body{font-family:'DIN Pro',system-ui,sans-serif;color:var(--d);background:var(--w);line-height:1.7;overflow-x:hidden;font-size:24px}
+    body.locked{overflow:hidden}
+    img{max-width:100%;height:auto;display:block}
+    a{text-decoration:none;color:inherit}
+    .c{max-width:var(--max);margin:0 auto;padding:0 var(--pad)}
+    h1,h2,h3,h4{font-family:'DIN 2014','DIN Pro',sans-serif;font-weight:300;line-height:1.15;letter-spacing:-0.01em}
+    p{color:var(--ds);line-height:1.75}
+    strong{font-weight:700;color:var(--d)}
+
+    .badge{display:inline-block;font-family:'DIN Pro';font-weight:700;font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--w);background:var(--g);padding:.4rem 1.1rem;border-radius:100px}
+    .stat{font-family:'DIN 2014';font-weight:200;color:var(--g);line-height:.95;letter-spacing:-.03em}
+    .source{font-family:'Minion Pro',Georgia,serif;font-size:.7rem;color:var(--dm);font-style:italic;margin-top:1.2rem;line-height:1.5}
+    .green{color:var(--g)}
+
+    /* Animations */
+    .rv{opacity:0;transform:translateY(40px);transition:opacity .8s cubic-bezier(.16,1,.3,1),transform .8s cubic-bezier(.16,1,.3,1)}
+    .rv.v{opacity:1;transform:translateY(0)}
+    .rv-d1{transition-delay:.1s}.rv-d2{transition-delay:.2s}.rv-d3{transition-delay:.3s}.rv-d4{transition-delay:.4s}
+    @keyframes glow{0%,100%{opacity:.35;transform:translate(-50%,-50%) scale(1)}50%{opacity:.55;transform:translate(-50%,-50%) scale(1.03)}}
+    @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+
+    /* ========== NAV ========== */
+    nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1.2rem 0;transition:all .4s}
+    nav.scrolled{background:rgba(255,255,255,.92);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);padding:.7rem 0;box-shadow:0 1px 0 rgba(0,0,0,.04)}
+    .nav-i{max-width:var(--max);margin:0 auto;padding:0 var(--pad);display:flex;justify-content:space-between;align-items:center}
+    .nav-i img{height:30px}
+    nav.scrolled .nav-i img{height:24px}
+    .nav-btn{font-family:'DIN Pro';font-weight:700;font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;color:var(--w);background:var(--g);padding:.5rem 1.3rem;border-radius:100px;transition:all .3s}
+    .nav-btn:hover{background:var(--gd);transform:translateY(-1px)}
+
+    /* ========== BUTTONS ========== */
+    .btn{display:inline-block;font-family:'DIN Pro';font-weight:700;font-size:.92rem;letter-spacing:.06em;text-transform:uppercase;padding:1rem 2.6rem;border-radius:100px;transition:all .3s;cursor:pointer;border:none}
+    .btn-p{color:var(--w);background:var(--g)}
+    .btn-p:hover{background:var(--gd);transform:translateY(-2px);box-shadow:0 12px 32px rgba(59,184,150,.25)}
+    .btn-o{color:var(--g);background:transparent;border:1.5px solid var(--g)}
+    .btn-o:hover{background:var(--g);color:var(--w);transform:translateY(-2px)}
+    .btn-w{color:var(--g);background:var(--w)}
+    .btn-w:hover{transform:translateY(-2px);box-shadow:0 12px 32px rgba(0,0,0,.1)}
+    .btn-glow{color:var(--w);background:var(--g);box-shadow:0 0 50px rgba(59,184,150,.25);font-size:1rem;padding:1.15rem 3.2rem}
+    .btn-glow:hover{box-shadow:0 0 70px rgba(59,184,150,.4);transform:translateY(-2px)}
+    .btns{display:flex;gap:1rem;flex-wrap:wrap}
+    .cta-sub{font-size:.72rem;color:var(--dm);margin-top:.75rem}
+
+    /* ========== 1. HERO ========== */
+    .hero{min-height:100vh;display:flex;align-items:center;position:relative;overflow:hidden;background:linear-gradient(180deg,var(--m100) 0%,var(--m50) 50%,var(--w) 100%);padding:100px 0 60px}
+    .hero-ring{position:absolute;width:min(700px,90vw);aspect-ratio:1;border-radius:50%;background:radial-gradient(circle,transparent 52%,rgba(59,184,150,.12) 62%,transparent 72%);top:50%;left:50%;animation:glow 5s ease-in-out infinite;pointer-events:none}
+    .hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center;position:relative;z-index:2}
+    .hero-text h1{font-size:clamp(2.4rem,4.8vw,3.6rem);font-weight:300;margin-bottom:1.25rem;line-height:1.15}
+    .hero-text h1 em{color:var(--g);font-style:normal}
+    .hero-sub{font-size:1.35rem;margin-bottom:1.5rem;max-width:480px}
+    .trust-strip{display:flex;gap:1.5rem;margin-bottom:2rem;flex-wrap:wrap}
+    .trust-item{display:flex;align-items:center;gap:.4rem;font-size:.78rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--ds)}
+    .trust-item svg{width:16px;height:16px;stroke:var(--g);fill:none;stroke-width:2}
+    .hero-img{border-radius:16px;overflow:hidden;box-shadow:0 40px 80px rgba(0,0,0,.06)}
+
+    /* ========== 2. PROBLEM (PAS-P) ========== */
+    .problem{padding:var(--gap) 0;text-align:center}
+    .problem h2{font-size:clamp(2.2rem,4.2vw,3.2rem);max-width:720px;margin:0 auto 2rem}
+    .problem-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:3rem}
+    .p-card{background:var(--m50);border-radius:16px;padding:clamp(24px,3.5vw,36px);text-align:left}
+    .p-card h4{font-weight:700;font-size:1.15rem;margin-bottom:.5rem;color:var(--d)}
+    .p-card p{font-size:1.1rem}
+    .p-card .stat{font-size:clamp(2.5rem,5vw,3.5rem);display:block;margin-bottom:.3rem}
+
+    /* ========== 3. AGITATE (PAS-A) ========== */
+    .agitate{padding:var(--gap) 0;background:var(--m100)}
+    .agitate-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
+    .agitate-text h2{font-size:clamp(2.2rem,4.2vw,3.2rem);margin-bottom:1.5rem}
+    .agitate-text h2 em{color:var(--g);font-style:normal}
+    .cost-list{list-style:none;display:flex;flex-direction:column;gap:2.5rem;margin:2.5rem 0}
+    .cost-list li{display:flex;flex-direction:column;gap:.5rem}
+    .cost-list li .cost-head{font-family:'DIN 2014';font-weight:700;font-size:clamp(1.5rem,3vw,2.1rem);color:var(--d);line-height:1.15;letter-spacing:-.02em}
+    .cost-list li .cost-body{font-size:1.1rem;color:var(--ds);line-height:1.65}
+    .agitate-img{border-radius:16px;overflow:hidden}
+    .agitate-ba{display:flex;flex-direction:column;gap:1rem}
+    .agitate-ba-label{font-family:'DIN Pro';font-weight:700;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;text-align:center;padding:.5rem 0}
+    .agitate-ba-label.lbl-before{color:#C66}
+    .agitate-ba-label.lbl-after{color:var(--g)}
+    .agitate-ba img{border-radius:16px;width:100%}
+
+    /* ========== HEADLINE CALLOUT — 3-tier hierarchy ========== */
+    .headline{padding:clamp(70px,12vh,140px) var(--pad);text-align:center;position:relative;overflow:hidden}
+    .headline .badge{margin-bottom:1.5rem}
+    /* TIER 1: The punch — massive, bold */
+    .headline .t1{font-family:'DIN 2014';font-weight:700;font-size:clamp(2.5rem,6.5vw,4.8rem);color:var(--d);line-height:1.06;letter-spacing:-.03em;max-width:960px;margin:0 auto}
+    .headline .t1 .green{color:var(--g)}
+    .headline .t1 .light{font-weight:200;color:var(--dm)}
+    /* TIER 2: The hook — medium, confident */
+    .headline .t2{font-family:'DIN 2014';font-weight:300;font-size:clamp(1.55rem,3.2vw,2.4rem);color:var(--d);line-height:1.3;max-width:740px;margin:1.5rem auto 0;letter-spacing:-.01em}
+    .headline .t2 .green{color:var(--g)}
+    /* TIER 3: The detail — smaller, softer */
+    .headline .t3{font-size:1.15rem;color:var(--ds);max-width:600px;margin:1.25rem auto 0;line-height:1.7}
+    .headline.mint{background:var(--m100)}
+    .headline.dark{background:var(--db);color:var(--w)}
+    .headline.dark .t1{color:var(--w)}
+    .headline.dark .t2{color:rgba(255,255,255,.7)}
+    .headline.dark .t3{color:rgba(255,255,255,.4)}
+
+    /* ========== PUNCH — 3 tier ========== */
+    .punch{min-height:50vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:40px var(--pad)}
+    .punch .pt1{font-family:'DIN 2014';font-weight:200;font-size:clamp(3rem,10vw,7.5rem);color:var(--g);line-height:1.02;letter-spacing:-.04em}
+    .punch .pt1 .dk{color:var(--d)}
+    .punch .pt2{font-family:'DIN 2014';font-weight:300;font-size:clamp(1.5rem,3.2vw,2.2rem);color:var(--d);line-height:1.35;max-width:620px;margin:1.5rem auto 0;letter-spacing:-.01em}
+    .punch .pt3{font-size:1.15rem;color:var(--ds);max-width:520px;margin:1rem auto 0;line-height:1.7}
+    .punch .source{margin-top:.75rem}
+
+    /* ========== 4. SOLUTION (PAS-S) ========== */
+    .solution{padding:var(--gap) 0}
+    .solution-header{text-align:center;max-width:620px;margin:0 auto 4rem}
+    .solution-header h2{font-size:clamp(2.2rem,4.2vw,3.2rem);margin-bottom:1.25rem}
+    .focus-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;max-width:900px;margin:0 auto}
+    .f-card{background:var(--m50);border-radius:16px;padding:clamp(24px,3.5vw,40px)}
+    .f-card h3{font-weight:700;font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:var(--g);margin-bottom:1.25rem}
+    .f-card .nm{font-family:'DIN 2014';font-weight:300;font-size:clamp(1.5rem,2.6vw,2.1rem);color:var(--d);margin-bottom:.75rem}
+    .f-card p{font-size:1.15rem;margin-bottom:.5rem}
+    .f-card .proof{display:inline-block;font-weight:700;font-size:.72rem;color:var(--g);background:var(--g10);padding:.35rem .8rem;border-radius:6px;margin-top:.5rem}
+
+    /* ========== CTA SECTION ========== */
+    .cta-s{padding:var(--gap) 0;text-align:center}
+    .cta-s h2{font-size:clamp(2.2rem,4.2vw,3.2rem);font-weight:200;margin-bottom:1rem}
+    .cta-s p{max-width:500px;margin:0 auto 2rem;font-size:1.25rem}
+    .cta-s.dark{background:var(--db);color:var(--w)}
+    .cta-s.dark h2{color:var(--w)}
+    .cta-s.dark p{color:rgba(255,255,255,.5)}
+    .cta-s.mint{background:linear-gradient(180deg,var(--m50),var(--m200))}
+
+    /* ========== 5. THE SYSTEM ========== */
+    .system{padding:var(--gap) 0;background:var(--m50)}
+    .system-header{text-align:center;max-width:560px;margin:0 auto 3.5rem}
+    .system-header h2{font-size:clamp(2.2rem,4.2vw,3.2rem);margin-bottom:1rem}
+    .sys-product{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,4vw,50px);align-items:center;padding:clamp(30px,5vh,60px) 0;border-bottom:1px solid var(--m200)}
+    .sys-product:last-child{border-bottom:none}
+    .sys-product:nth-child(even){direction:rtl}
+    .sys-product:nth-child(even) > *{direction:ltr}
+    .sys-img{border-radius:12px;overflow:hidden;background:var(--w)}
+    .sys-img img{transition:transform .6s cubic-bezier(.16,1,.3,1)}
+    .sys-product:hover .sys-img img{transform:scale(1.02)}
+    .sys-step{font-family:'DIN 2014';font-weight:200;font-size:clamp(3.5rem,7vw,6rem);color:var(--m300);line-height:1;margin-bottom:.5rem}
+    .sys-name{font-family:'DIN 2014';font-weight:300;font-size:clamp(1.6rem,3vw,2.3rem);color:var(--g);text-transform:uppercase;margin-bottom:.75rem;line-height:1.15}
+    .sys-desc{font-size:1.2rem;margin-bottom:1.5rem;max-width:460px}
+    .sys-meta{display:flex;flex-direction:column;gap:.75rem;margin-bottom:1.5rem}
+    .sys-meta-row{display:flex;gap:.6rem;align-items:baseline}
+    .sys-meta-label{font-weight:700;font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;color:var(--g);background:var(--m100);padding:.2rem .5rem;border-radius:3px;white-space:nowrap}
+    .sys-meta-val{font-size:.84rem;color:var(--ds);line-height:1.5}
+    .sys-stats{display:flex;gap:clamp(16px,2.5vw,32px);padding-top:1.25rem;border-top:1px solid var(--m200)}
+    .sys-stat .stat{font-size:clamp(2.5rem,5vw,3.5rem);display:block}
+    .sys-stat .sd{font-size:.95rem;color:var(--ds);max-width:150px;line-height:1.4;margin-top:.15rem}
+    .sys-fmt{font-size:.72rem;color:var(--dm);margin-top:1rem}
+
+    /* ========== 6. BEFORE & AFTER ========== */
+    .ba{padding:var(--gap) 0;overflow:hidden}
+    .ba-header{text-align:center;max-width:600px;margin:0 auto 4rem}
+    .ba-header h2{font-size:clamp(2.2rem,4.2vw,3.2rem);margin-bottom:1rem}
+    .ba-timeline{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;max-width:1000px;margin:0 auto}
+    .ba-week{background:var(--m50);border-radius:16px;padding:clamp(20px,2.5vw,28px);position:relative;border:1px solid var(--m200);transition:border-color .3s}
+    .ba-week:hover{border-color:var(--g)}
+    .ba-week.before{background:#FFF5F5;border-color:#FEE}
+    .ba-week .wk{font-family:'DIN 2014';font-weight:200;font-size:clamp(2.2rem,3.5vw,3rem);color:var(--g);margin-bottom:.75rem}
+    .ba-week.before .wk{color:#C66}
+    .ba-week h4{font-weight:700;font-size:1.15rem;margin-bottom:.5rem}
+    .ba-week p{font-size:1.08rem;line-height:1.6}
+    .ba-week .ba-stat{font-family:'DIN 2014';font-weight:200;font-size:1.75rem;color:var(--g);display:block;margin-top:.75rem}
+    /* After reveal — full width below timeline */
+    .ba-reveal{margin-top:clamp(50px,8vh,90px);position:relative}
+    .ba-reveal-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(20px,3vw,40px);max-width:900px;margin:0 auto;align-items:end}
+    .ba-reveal-card{border-radius:16px;overflow:hidden;position:relative}
+    .ba-reveal-card img{width:100%;height:clamp(300px,40vw,480px);object-fit:cover;display:block}
+    .ba-reveal-card .ba-label{position:absolute;bottom:0;left:0;right:0;padding:1.5rem;background:linear-gradient(0deg,rgba(0,0,0,.55),transparent);text-align:center}
+    .ba-reveal-card .ba-label span{font-family:'DIN 2014';font-weight:700;font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--w)}
+    .ba-reveal-card.after{border:2px solid var(--g)}
+    .ba-reveal-card.after .ba-label{background:linear-gradient(0deg,rgba(59,184,150,.7),transparent)}
+    .ba-reveal-arrow{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index:5;width:52px;height:52px;background:var(--w);border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(0,0,0,.12);font-family:'DIN 2014';font-weight:200;font-size:1.4rem;color:var(--g)}
+
+    /* ========== 7. INGREDIENTS ========== */
+    .ing{padding:var(--gap) 0;background:var(--db);position:relative;overflow:hidden}
+    .ing .bg{position:absolute;inset:0;background:url('assets/images/molecular-spheres.png') center/600px no-repeat;opacity:.06}
+    .ing-header{text-align:center;max-width:600px;margin:0 auto 4rem;position:relative;z-index:2}
+    .ing-header h2{color:var(--w)}
+    .ing-header p{color:rgba(255,255,255,.5)}
+    .ing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;max-width:1000px;margin:0 auto;position:relative;z-index:2}
+    .ig{padding:clamp(24px,3vw,36px);background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:16px;transition:all .4s;position:relative;overflow:hidden}
+    .ig:hover{background:rgba(255,255,255,.08);border-color:rgba(59,184,150,.25);transform:translateY(-4px)}
+    .ig-vis{width:64px;height:64px;margin-bottom:1.25rem;position:relative}
+    .ig-vis svg{width:100%;height:100%}
+    .ig h4{font-family:'DIN 2014';font-size:1.25rem;font-weight:700;margin-bottom:.4rem;color:var(--w)}
+    .ig p{font-size:1.02rem;line-height:1.55;color:rgba(255,255,255,.55)}
+    .ig .pf{font-size:.88rem;font-weight:700;color:var(--g);margin-top:.65rem;display:inline-block;padding:.3rem .7rem;background:rgba(59,184,150,.1);border-radius:6px}
+    .ing-foot{text-align:center;margin-top:3.5rem;position:relative;z-index:2}
+    .ing-foot p{font-family:'DIN 2014';font-weight:300;font-size:1.2rem;color:var(--w)}
+    .ing-foot .source{color:rgba(255,255,255,.3)}
+
+    /* ========== 8. TESTIMONIALS ========== */
+    .test{padding:var(--gap) 0}
+    .test-header{text-align:center;margin-bottom:3rem}
+    .test-header h2{font-size:clamp(2.2rem,4.2vw,3.2rem)}
+    .test-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;max-width:1000px;margin:0 auto}
+    .t-card{background:var(--m50);border-radius:20px;padding:clamp(24px,3.5vw,36px);display:flex;flex-direction:column}
+    .t-stars{color:var(--g);font-size:1.1rem;margin-bottom:1rem;letter-spacing:.15em}
+    .t-quote{font-size:1.12rem;line-height:1.7;margin-bottom:1.5rem;font-style:italic;color:var(--d);flex:1}
+    .t-author{display:flex;align-items:center;gap:1rem;padding-top:1.25rem;border-top:1px solid var(--m200)}
+    .t-avatar{width:52px;height:52px;min-width:52px;border-radius:50%;overflow:hidden}
+    .t-avatar img{width:100%;height:100%;object-fit:cover;object-position:center 20%}
+    .t-name{font-weight:700;font-size:.95rem}
+    .t-detail{font-size:.78rem;color:var(--dm)}
+    .test-badges{display:flex;justify-content:center;gap:2rem;margin-top:3rem;flex-wrap:wrap}
+    .test-badge{display:flex;align-items:center;gap:.5rem;font-size:.78rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--ds)}
+    .test-badge svg{width:22px;height:22px;stroke:var(--g);fill:none;stroke-width:1.8}
+
+    /* ========== 9. FAQ ========== */
+    .faq{padding:var(--gap) 0;background:var(--m50)}
+    .faq-header{text-align:center;margin-bottom:3rem}
+    .faq-list{max-width:700px;margin:0 auto}
+    .faq-item{border-bottom:1px solid var(--m200);padding:1.5rem 0}
+    .faq-q{display:flex;justify-content:space-between;align-items:center;cursor:pointer;gap:1rem}
+    .faq-q h4{font-weight:600;font-size:1.3rem;line-height:1.4}
+    .faq-q .faq-icon{width:24px;height:24px;min-width:24px;border-radius:50%;background:var(--m200);display:flex;align-items:center;justify-content:center;font-size:.8rem;color:var(--g);transition:transform .3s}
+    .faq-item.open .faq-icon{transform:rotate(45deg)}
+    .faq-a{max-height:0;overflow:hidden;transition:max-height .4s ease,padding .4s ease}
+    .faq-item.open .faq-a{max-height:300px;padding-top:1rem}
+    .faq-a p{font-size:1.18rem;line-height:1.7}
+
+    /* ========== 10. BREAK THE CYCLE ========== */
+    .brk{padding:var(--gap) 0;background:var(--db);color:var(--w);overflow:hidden}
+    .brk-header{text-align:center;margin-bottom:clamp(3rem,6vh,5rem)}
+    .brk-header .badge{background:rgba(59,184,150,.15);color:var(--g)}
+    .brk-header h2{color:var(--w);font-size:clamp(2.2rem,4.5vw,3.5rem);margin-bottom:1rem}
+    .brk-header p{color:rgba(255,255,255,.45);max-width:500px;margin:0 auto;font-size:1.15rem}
+    /* The cycle - 3 stages shown as a horizontal flow */
+    .cycle-flow{display:flex;align-items:center;justify-content:center;gap:0;margin-bottom:clamp(3rem,5vh,4.5rem);flex-wrap:wrap}
+    .cycle-stage{text-align:center;padding:1.5rem clamp(1.5rem,3vw,2.5rem)}
+    .cycle-stage .cy-label{font-family:'DIN 2014';font-weight:700;font-size:clamp(1.4rem,3vw,2.2rem);color:rgba(255,80,80,.7);line-height:1.1;margin-bottom:.4rem;transition:all .8s}
+    .cycle-stage .cy-sub{font-size:.88rem;color:rgba(255,255,255,.3);max-width:160px;margin:0 auto;line-height:1.45}
+    .cycle-arrow{font-family:'DIN 2014';font-weight:200;font-size:1.8rem;color:rgba(255,80,80,.25);transition:all .8s}
+    /* Intervention row */
+    .brk-intervention{max-width:900px;margin:0 auto clamp(3rem,5vh,4.5rem);display:grid;grid-template-columns:repeat(5,1fr);gap:clamp(.5rem,1.5vw,1rem);text-align:center}
+    .brk-step{padding:1.25rem .75rem;background:rgba(59,184,150,.06);border:1px solid rgba(59,184,150,.12);border-radius:12px;transition:all .6s;opacity:0;transform:translateY(20px)}
+    .brk.active .brk-step{opacity:1;transform:translateY(0)}
+    .brk.active .brk-step:nth-child(1){transition-delay:.1s}
+    .brk.active .brk-step:nth-child(2){transition-delay:.2s}
+    .brk.active .brk-step:nth-child(3){transition-delay:.3s}
+    .brk.active .brk-step:nth-child(4){transition-delay:.4s}
+    .brk.active .brk-step:nth-child(5){transition-delay:.5s}
+    .brk-step .bs-num{font-family:'DIN 2014';font-weight:700;font-size:1.1rem;color:var(--g);width:36px;height:36px;border-radius:50%;background:rgba(59,184,150,.12);display:flex;align-items:center;justify-content:center;margin:0 auto .65rem}
+    .brk-step .bs-name{font-family:'DIN 2014';font-weight:700;font-size:.82rem;color:var(--w);margin-bottom:.25rem;line-height:1.2}
+    .brk-step .bs-does{font-size:.72rem;color:rgba(255,255,255,.35);line-height:1.4}
+    /* After state */
+    .brk.active .cycle-stage .cy-label{color:rgba(59,184,150,.25);text-decoration:line-through;text-decoration-color:var(--g);text-decoration-thickness:2px}
+    .brk.active .cycle-arrow{color:rgba(59,184,150,.15)}
+    /* CTA */
+    .brk-cta{text-align:center;opacity:0;transform:translateY(20px);transition:all .8s cubic-bezier(.16,1,.3,1) .8s}
+    .brk.active .brk-cta{opacity:1;transform:translateY(0)}
+    .brk-cta h3{font-family:'DIN 2014';font-weight:200;font-size:clamp(2.5rem,5.5vw,4rem);color:var(--w);margin-bottom:1.5rem}
+    .brk-cta h3 em{color:var(--g);font-style:italic;font-family:'Minion Pro',serif}
+
+    /* ========== FINAL CTA ========== */
+    .final{padding:var(--gap) 0;background:linear-gradient(180deg,var(--m50),var(--m200));text-align:center;position:relative;overflow:hidden}
+    .final .ring{position:absolute;width:500px;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle,transparent 48%,rgba(59,184,150,.1) 58%,transparent 68%);top:50%;left:50%;animation:glow 5s ease-in-out infinite;pointer-events:none}
+    .final .inner{position:relative;z-index:2}
+    .final h2{font-size:clamp(2.2rem,5vw,3.5rem);font-weight:200;margin-bottom:1rem}
+    .final p{max-width:520px;margin:0 auto 2.5rem;font-size:1.25rem}
+    .final .logo-end{margin-top:2.5rem;opacity:.3}
+    .final .logo-end img{height:32px;margin:0 auto}
+
+    /* ========== FOOTER ========== */
+    footer{padding:2rem 0;background:var(--db);color:rgba(255,255,255,.3);text-align:center;font-size:.68rem;line-height:1.8}
+    footer img{height:20px;opacity:.3;filter:brightness(2);margin:0 auto .75rem}
+    footer p{max-width:500px;margin:0 auto}
+
+    /* ========== TEXTURE ========== */
+    .tex{height:40vh;min-height:250px;max-height:420px;background-size:cover;background-position:center;position:relative}
+    .tex::before,.tex::after{content:'';position:absolute;left:0;right:0;height:80px}
+    .tex::before{top:0;background:linear-gradient(180deg,var(--w),transparent)}
+    .tex::after{bottom:0;background:linear-gradient(0deg,var(--w),transparent)}
+    .tex.fm::before{background:linear-gradient(180deg,var(--m100),transparent)}
+    .tex.tm::after{background:linear-gradient(0deg,var(--m100),transparent)}
+    .tex.fm50::before{background:linear-gradient(180deg,var(--m50),transparent)}
+
+    /* ========== PASSWORD GATE ========== */
+    .gate{position:fixed;inset:0;z-index:9999;display:flex;align-items:center;justify-content:center;transition:opacity .8s cubic-bezier(.16,1,.3,1),transform .8s cubic-bezier(.16,1,.3,1)}
+    .gate.unlocked{opacity:0;transform:scale(1.05);pointer-events:none}
+    .gate-bg{position:absolute;inset:0;background:var(--m100)}
+    /* CTX-inspired cutout shapes — reveal hints of the website behind */
+    .gate-shape{position:absolute;background:rgba(59,184,150,.06);border:1.5px solid rgba(59,184,150,.12);backdrop-filter:blur(2px)}
+    .gate-shape.s1{width:280px;height:280px;border-radius:50%;top:-40px;right:-60px;animation:gfloat 8s ease-in-out infinite}
+    .gate-shape.s2{width:180px;height:180px;border-radius:50%;bottom:10%;left:-40px;animation:gfloat 6s ease-in-out 1s infinite}
+    .gate-shape.s3{width:120px;height:120px;border-radius:16px;top:15%;left:12%;transform:rotate(25deg);animation:gfloat 7s ease-in-out 2s infinite}
+    .gate-shape.s4{width:200px;height:60px;border-radius:100px;bottom:20%;right:8%;transform:rotate(-8deg);animation:gfloat 9s ease-in-out .5s infinite}
+    .gate-shape.s5{width:90px;height:90px;border-radius:50%;top:30%;right:20%;animation:gfloat 5s ease-in-out 1.5s infinite}
+    .gate-shape.s6{width:300px;height:300px;border-radius:50%;bottom:-80px;left:30%;border:1px solid rgba(59,184,150,.08);background:transparent}
+    @keyframes gfloat{0%,100%{transform:translateY(0) rotate(var(--r,0deg))}50%{transform:translateY(-12px) rotate(var(--r,0deg))}}
+    .gate-shape.s3{--r:25deg}.gate-shape.s4{--r:-8deg}
+    .gate-content{position:relative;z-index:2;text-align:center;max-width:420px;padding:0 var(--pad)}
+    .gate-logo{height:36px;margin:0 auto 3rem;opacity:.7}
+    .gate-title{font-family:'DIN 2014';font-weight:200;font-size:clamp(2.5rem,5vw,3.8rem);color:var(--d);line-height:1.1;margin-bottom:.75rem;letter-spacing:-.03em}
+    .gate-title span{color:var(--g);font-weight:700}
+    .gate-sub{font-size:1rem;color:var(--ds);margin-bottom:2.5rem}
+    .gate-input-wrap{position:relative;max-width:280px;margin:0 auto}
+    .gate-input{width:100%;font-family:'DIN 2014';font-weight:700;font-size:1.4rem;letter-spacing:.25em;text-transform:uppercase;text-align:center;padding:1rem 1.5rem;border:2px solid var(--m200);border-radius:16px;background:var(--w);color:var(--d);outline:none;transition:all .3s}
+    .gate-input:focus{border-color:var(--g);box-shadow:0 0 0 4px rgba(59,184,150,.1)}
+    .gate-input.wrong{border-color:#e55;animation:shake .4s ease}
+    .gate-hint{font-size:.78rem;color:var(--dm);margin-top:1rem}
+    @keyframes shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-6px)}75%{transform:translateX(6px)}}
+    .gate-ring{position:absolute;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,transparent 45%,rgba(59,184,150,.06) 55%,transparent 65%);top:50%;left:50%;transform:translate(-50%,-50%);pointer-events:none;animation:glow 6s ease-in-out infinite}
+
+    /* ========== STICKY CTA BAR ========== */
+    .sticky-cta{position:fixed;bottom:0;left:0;right:0;z-index:90;background:rgba(255,255,255,.95);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);padding:.75rem 0;border-top:1px solid var(--m200);transform:translateY(100%);transition:transform .4s cubic-bezier(.16,1,.3,1);display:flex;align-items:center;justify-content:center;gap:1.5rem}
+    .sticky-cta.show{transform:translateY(0)}
+    .sticky-cta-text{font-family:'DIN 2014';font-weight:700;font-size:.85rem;color:var(--d);letter-spacing:-.01em}
+    .sticky-cta-text span{color:var(--g)}
+
+    /* ========== RESPONSIVE ========== */
+    @media(max-width:820px){
+      .hero-grid{grid-template-columns:1fr;text-align:center}
+      .hero-text{order:1}.hero-img-wrap{order:2}
+      .trust-strip{justify-content:center}
+      .btns{justify-content:center}
+      .problem-cards{grid-template-columns:1fr}
+      .agitate-grid{grid-template-columns:1fr;gap:2.5rem}
+      .focus-grid{grid-template-columns:1fr}
+      .sys-product,.sys-product:nth-child(even){grid-template-columns:1fr;direction:ltr}
+      .ba-timeline{grid-template-columns:1fr 1fr}
+      .ba-reveal-card img{height:280px}
+      .ba-reveal-arrow{width:40px;height:40px;font-size:1.1rem}
+      .ing-grid{grid-template-columns:1fr 1fr}
+      .test-grid{grid-template-columns:1fr}
+      .brk-intervention{grid-template-columns:repeat(3,1fr)}
+      .cycle-flow{gap:.5rem}
+    }
+    @media(max-width:480px){
+      .ba-timeline{grid-template-columns:1fr}
+      .ba-reveal-grid{grid-template-columns:1fr 1fr}
+      .ba-reveal-card img{height:180px}
+      .ba-reveal-arrow{width:32px;height:32px;font-size:.9rem}
+      .sys-stats{flex-wrap:wrap}
+      .punch .pt1{font-size:clamp(2.5rem,12vw,5rem)}
+      .ing-grid{grid-template-columns:1fr}
+      .gate-shape.s1{width:160px;height:160px}
+      .gate-shape.s2{width:100px;height:100px}
+      .gate-shape.s6{width:200px;height:200px}
+      .sticky-cta-text{display:none}
+      .brk-intervention{grid-template-columns:repeat(2,1fr)}
+      .cycle-arrow{font-size:1.2rem}
+    }
+  </style>
+</head>
+<body class="locked">
+
+<!-- ========== PASSWORD GATE ========== -->
+<div class="gate" id="gate">
+  <div class="gate-bg"></div>
+  <div class="gate-shape s1"></div>
+  <div class="gate-shape s2"></div>
+  <div class="gate-shape s3"></div>
+  <div class="gate-shape s4"></div>
+  <div class="gate-shape s5"></div>
+  <div class="gate-shape s6"></div>
+  <div class="gate-ring"></div>
+  <div class="gate-content">
+    <img src="assets/images/clearist-ctx-logo.png" alt="Clearist CTX" style="height:auto;width:min(400px,80vw);margin:0 auto 2.5rem">
+    <div class="gate-title">Pre-launch<br><span>access.</span></div>
+    <p class="gate-sub">For Skeyndor professionals and invited guests.</p>
+    <div class="gate-input-wrap">
+      <input type="text" class="gate-input" id="gateInput" placeholder="_ _ _" maxlength="3" autocomplete="off" autofocus>
+    </div>
+    <p class="gate-hint">Enter the access code to continue</p>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav id="nav">
+  <div class="nav-i">
+    <a href="#" style="display:flex;align-items:center;gap:1rem"><img src="assets/images/clearist-ctx-logo.png" alt="Clearist CTX" style="height:44px;width:auto"><span style="font-size:.55rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--dm);border-left:1px solid var(--m200);padding-left:1rem">by Skeyndor</span></a>
+    <a href="#consult" class="nav-btn">Free Consultation</a>
+  </div>
+</nav>
+
+<!-- ========== 1. HERO ========== -->
+<section class="hero">
+  <div class="hero-ring"></div>
+  <div class="c hero-grid">
+    <div class="hero-text">
+      <div class="badge" style="margin-bottom:1.5rem">Clinical Acne Care</div>
+      <h1>51% fewer breakouts in 28 days. <em>Clinically measured.</em></h1>
+      <p class="hero-sub" style="font-size:1.25rem;font-weight:500;color:var(--d);margin-bottom:.5rem">The first range to combine topical GABA with cortisol control.</p>
+      <p class="hero-sub">Two mechanisms from aesthetic medicine and psychodermatology, combined in a single clinical protocol. Available exclusively through authorised skin professionals.</p>
+      <div class="btns">
+        <a href="mailto:care@skeyndor.com.au?subject=Clearist%20CTX%20Consultation&body=Hi%2C%20I'd%20like%20to%20book%20a%20free%20skin%20consultation%20for%20Clearist%20CTX." class="btn btn-p">Start My Free Consultation</a>
+      </div>
+      <p class="cta-sub">Free. 15 minutes. In-salon or virtual. No obligation.</p>
+    </div>
+    <div class="hero-img-wrap">
+      <div class="hero-img rv"><img src="assets/images/hero.jpg" alt="Clearist CTX - clear, healthy skin" loading="eager"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== 2. PROBLEM (PAS-P) ========== -->
+<section class="problem">
+  <div class="c">
+    <div class="rv">
+      <div class="badge">The problem</div>
+      <h2>Most acne products manage symptoms.<br>They don't address the cause.</h2>
+      <p style="max-width:600px;margin:0 auto;">Consumer skincare targets the surface. But for the majority of adult women with acne, the triggers are hormonal, stress-related, and systemic. That requires a different class of treatment.</p>
+    </div>
+    <div class="problem-cards">
+      <div class="p-card rv">
+        <span class="stat" data-count="80" style="font-size:clamp(2rem,4vw,2.8rem)">0%</span>
+        <h4>of people affected</h4>
+        <p>Combination and oily skin is the single most common dermatological concern globally.</p>
+      </div>
+      <div class="p-card rv rv-d1">
+        <span class="stat" data-count="54" style="font-size:clamp(2rem,4vw,2.8rem)">0%</span>
+        <h4>of adult women</h4>
+        <p>Experience acne in adulthood. Persistent or late-onset. Hormonal, stress-driven, or both.</p>
+      </div>
+      <div class="p-card rv rv-d2">
+        <span class="stat" data-count="98" style="font-size:clamp(2rem,4vw,2.8rem)">0%</span>
+        <h4>linked to emotional impact</h4>
+        <p>Report significant psychological impact. Acne is clinically linked to cortisol elevation, anxiety, and reduced quality of life.</p>
+      </div>
+    </div>
+    <p class="source rv" style="text-align:center">Source: Pubmed, National Library of Medicine; Skroza et al., 2018</p>
+  </div>
+</section>
+
+<!-- ========== 3. AGITATE (PAS-A) ========== -->
+<section class="agitate">
+  <div class="c agitate-grid">
+    <div class="agitate-text rv">
+      <div class="badge">Why it persists</div>
+      <h2>Acne in adults is a <em>chronic condition,</em> not a phase.</h2>
+      <ul class="cost-list">
+        <li>
+          <div class="cost-head">The products you're using aren't clinical-grade.</div>
+          <div class="cost-body">Consumer skincare caps active concentrations well below therapeutic thresholds. A 2% glycolic cleanser can't do what a 10% AHA protocol does. The formulations are different. The results are different.</div>
+        </li>
+        <li>
+          <div class="cost-head">The stress connection is being ignored.</div>
+          <div class="cost-body">Cortisol directly increases sebum production and weakens the skin barrier. Most acne products don't acknowledge this mechanism at all. They treat the oil without treating the signal that produces it.</div>
+        </li>
+        <li>
+          <div class="cost-head">Late-onset acne is increasing.</div>
+          <div class="cost-body">25% of adults over 25 now present with persistent or new-onset acne. It disproportionately affects women. It correlates with modern stress patterns. And it requires a fundamentally different treatment approach.</div>
+        </li>
+        <li>
+          <div class="cost-head">Without intervention, the cycle compounds.</div>
+          <div class="cost-body">Stress elevates cortisol. Cortisol increases sebum. Sebum causes breakouts. Breakouts cause anxiety. Anxiety elevates cortisol. This is a documented clinical loop. It doesn't resolve on its own.</div>
+        </li>
+      </ul>
+    </div>
+    <div class="agitate-ba rv rv-d2">
+      <div>
+        <img src="assets/images/before-15day.jpg" alt="Before - acne-prone skin" loading="lazy">
+        <p class="agitate-ba-label lbl-before">Before treatment</p>
+      </div>
+      <div>
+        <img src="assets/images/after-15day.jpg" alt="After 15 days with Clearist CTX" loading="lazy">
+        <p class="agitate-ba-label lbl-after">After 15 days with CTX</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HEADLINE: Innovation announcement -->
+<div class="headline rv">
+  <div class="badge">The innovation</div>
+  <div class="t1">Topical GABA meets <span class="green">cortisol control.</span></div>
+  <div class="t2">Two mechanisms from two different fields of medicine. One protocol.</div>
+  <p class="t3">GABA reproduces the sebum-reducing effect of botulinum toxin, topically. Tephrosia Purpurea inhibits 70% of cutaneous cortisol production within 2 hours. Together, they address acne at both its mechanical and hormonal triggers.</p>
+</div>
+
+<!-- PUNCH -->
+<div class="punch rv">
+  <div class="pt1">The brain-skin<br><span class="dk">axis.</span></div>
+  <div class="pt2">Cortisol is a sebum trigger. Your skin produces it locally, in response to stress. This is the mechanism most acne treatments ignore entirely.</div>
+  <p class="pt3">Psychodermatology research has established a direct pathway: psychological stress elevates cutaneous cortisol, which increases sebaceous activity, weakens the barrier, and drives inflammatory acne.</p>
+</div>
+
+<!-- ========== 4. SOLUTION (PAS-S) ========== -->
+<section class="solution" id="solution">
+  <div class="c">
+    <div class="solution-header rv">
+      <div class="badge">The solution</div>
+      <h2>Two mechanisms. One protocol.</h2>
+      <p>Clearist CTX combines principles from <strong>aesthetic medicine</strong> (GABA, the topical Botox* mechanism) with <strong>psychodermatology</strong> (Tephrosia Purpurea, cortisol inhibition). Each addresses a different driver of acne.</p>
+    </div>
+    <div class="focus-grid">
+      <div class="f-card rv">
+        <h3>Aesthetic Medicine</h3>
+        <div class="nm">Baby GABA</div>
+        <p>A neurocosmetic that delivers the Baby Botox* effect topically. Reduces sebum. Minimises pores. No injections.</p>
+        <div class="proof">Mattifies from first application</div>
+        <p class="source">Source: J. Cutaneous & Aesthetic Surgery, Goodman, 2010</p>
+      </div>
+      <div class="f-card rv rv-d2">
+        <h3>Psychodermatology</h3>
+        <div class="nm">Cortisol Control</div>
+        <p>Tephrosia Purpurea extract targets your skin's own cortisol production. Less cortisol = less sebum, less inflammation, stronger barrier.</p>
+        <div class="proof">Inhibits 70% of cortisol in 2 hours</div>
+        <p class="source">Source: Brain-Skin Connection, Avon R&D, 2014</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HEADLINE: Botox history -->
+<div class="headline dark rv">
+  <div class="t1">In 2010, dermatologists discovered that micro-doses of Botox* <span class="green">dramatically reduced sebum production.</span></div>
+  <div class="t2">They called it Baby Botox. It worked. But it required injections. <span class="green">Until now.</span></div>
+  <p class="t3">GABA (gamma-aminobutyric acid) reproduces the muscle-relaxing mechanism of botulinum toxin topically. It reduces sebaceous gland activity, minimises pores, and modulates the skin's stress response. No needles. No clinic visits. Same science.</p>
+</div>
+
+<!-- PUNCH -->
+<div class="punch rv">
+  <div class="pt1"><span class="dk">51% fewer breakouts.</span><br>Zero needles.</div>
+  <div class="pt2">Succinic acid outperformed salicylic acid across every measured endpoint. GABA reduced sebaceous activity without injection.</div>
+  <p class="pt3">Placebo-controlled, peer-reviewed. 60 volunteers. 28 days. p &lt;0.05 for sebum, pore size, and papule count.</p>
+  <p class="source">Birkett et al., 2022. In vivo, 2% succinic acid vs. 2% salicylic acid and placebo.</p>
+</div>
+
+<!-- HEADLINE: The numbers -->
+<div class="headline mint rv">
+  <div class="t1"><span class="green">41.5%</span> less sebum. <span class="green">9%</span> smaller pores. <span class="green">51%</span> fewer breakouts.</div>
+  <div class="t2">In 28 days. Not rounded. Not estimated. Measured.</div>
+  <p class="t3">Dermatological control study: sebumetry + image analysis + clinical scoring. 60 volunteers with oily skin, 18-35 years. 2% succinic vs. 2% salicylic acid and placebo. Every number is p &lt;0.05.</p>
+</div>
+
+<!-- CTA #2 — FALSE CLOSE -->
+<section class="cta-s rv" id="consult">
+  <div class="c">
+    <h2>Find out if CTX is right for your skin.</h2>
+    <p>A 15-minute consultation with a Skeyndor skin therapist. They'll assess your skin, recommend a protocol, and answer your questions.</p>
+    <div class="btns" style="justify-content:center">
+      <a href="mailto:care@skeyndor.com.au?subject=Clearist%20CTX%20Consultation&body=Hi%2C%20I'd%20like%20to%20book%20a%20free%20skin%20consultation." class="btn btn-p">Start My Free Consultation</a>
+      <a href="#system" class="btn btn-o">See the Full System</a>
+    </div>
+    <p class="cta-sub">Free. 15 minutes. No obligation. Professional advice.</p>
+  </div>
+</section>
+
+<!-- TEXTURE -->
+<div class="tex fm50" style="background-image:url('assets/images/dropper.jpg')"></div>
+
+<!-- HEADLINE: System intro -->
+<div class="headline rv">
+  <div class="t1">Not 5 products. <span class="green">One clinical protocol.</span></div>
+  <div class="t2">Every product amplifies the others. Step 1 prepares for Step 2. Step 3 activates what Step 2 prepared.</div>
+  <p class="t3">This isn't a collection of products that share a name. It's a coordinated treatment system. Your skin therapist prescribes the protocol. The products do the rest.</p>
+</div>
+
+<!-- ========== 5. THE SYSTEM ========== -->
+<section class="system" id="system">
+  <div class="c">
+    <div class="system-header rv">
+      <div class="badge">The protocol</div>
+      <h2>The complete Clearist CTX system.</h2>
+      <p>Prescribed by your skin therapist. Each step is formulated to prepare the skin for the next.</p>
+    </div>
+
+    <div class="sys-product rv">
+      <div class="sys-img"><img src="assets/images/collage-foam.jpg" alt="Purifying Cleansing Foam" loading="lazy"></div>
+      <div>
+        <div class="sys-step">01</div>
+        <div class="sys-name">Purifying Cleansing Foam</div>
+        <p class="sys-desc">Tri-acid exfoliant cleanser. Mandelic, glycolic, and levulinic acids dissolve sebum plugs and surface debris while betaine maintains barrier hydration.</p>
+        <div class="sys-meta">
+          <div class="sys-meta-row"><span class="sys-meta-label">Actives</span><span class="sys-meta-val">Mandelic Acid, Glycolic Acid, Levulinic Acid, Betaine. AHA 3.0%, pH ≥4.0</span></div>
+        </div>
+        <div class="sys-meta">
+          <div class="sys-meta-row"><span class="sys-meta-label">pH</span><span class="sys-meta-val">&ge;4.0 - clinically gentle on compromised skin</span></div>
+        </div>
+        <div class="sys-fmt">150 ml</div>
+      </div>
+    </div>
+
+    <div class="sys-product rv">
+      <div class="sys-img"><img src="assets/images/collage-exfoliant.jpg" alt="Exfoliating Care Lotion" loading="lazy"></div>
+      <div>
+        <div class="sys-step">02</div>
+        <div class="sys-name">Exfoliating Care Lotion</div>
+        <p class="sys-desc">Progressive exfoliating lotion with anti-cortisol action. Refines pores, softens marks, reduces the cosmetic effects of daily stress on your skin.</p>
+        <div class="sys-meta">
+          <div class="sys-meta-row"><span class="sys-meta-label">Actives</span><span class="sys-meta-val">Glycolic Acid, Mandelic Acid, Succinic Acid, Tephrosia Purpurea. AHA 10.0%, pH ≥3.5</span></div>
+        </div>
+        <div class="sys-stats">
+          <div class="sys-stat"><span class="stat" data-count="95">0%</span><span class="sd">Reduction in blackheads</span></div>
+          <div class="sys-stat"><span class="stat" data-count="89">0%</span><span class="sd">Softening of post-acne marks</span></div>
+        </div>
+        <div class="sys-fmt">100 ml</div>
+      </div>
+    </div>
+
+    <div class="sys-product rv">
+      <div class="sys-img"><img src="assets/images/collage-booster.jpg" alt="Mattifying GBX Booster" loading="lazy"></div>
+      <div>
+        <div class="sys-step">03</div>
+        <div class="sys-name">Mattifying GBX Booster</div>
+        <p class="sys-desc">The core innovation. GABA delivers the Baby Botox* effect topically, reducing sebum production at the source. Your skin mattifies from the first application.</p>
+        <div class="sys-meta">
+          <div class="sys-meta-row"><span class="sys-meta-label">Actives</span><span class="sys-meta-val">Baby GABA, Levulinic Acid, Zinc PCA, Sarcosine</span></div>
+        </div>
+        <div class="sys-stats">
+          <div class="sys-stat"><span class="stat">41.5%</span><span class="sd">Sebum reduction at 28 days</span></div>
+          <div class="sys-stat"><span class="stat">9%</span><span class="sd">Pore size reduction</span></div>
+        </div>
+        <div class="sys-fmt">30 ml</div>
+      </div>
+    </div>
+
+    <div class="sys-product rv">
+      <div class="sys-img"><img src="assets/images/collage-gelemulsion.jpg" alt="Mattifying Balance Gel-Emulsion" loading="lazy"></div>
+      <div>
+        <div class="sys-step">04</div>
+        <div class="sys-name">Mattifying Balance Gel-Emulsion</div>
+        <p class="sys-desc">Microbiome-balancing moisturiser with Lactococcus Lysate and Bisabolol. Restores barrier function compromised by active treatments. Matte finish without dehydration.</p>
+        <div class="sys-meta">
+          <div class="sys-meta-row"><span class="sys-meta-label">Actives</span><span class="sys-meta-val">HS Soy Extract, Lactococcus Lysate, Bisabolol, Niacinamide, Vitamin E</span></div>
+        </div>
+        <div class="sys-stats">
+          <div class="sys-stat"><span class="stat">185%</span><span class="sd">Boost in antimicrobial peptides</span></div>
+        </div>
+        <div class="sys-fmt">50 ml</div>
+      </div>
+    </div>
+
+    <div class="sys-product rv">
+      <div class="sys-img"><img src="assets/images/collage-corrector.jpg" alt="Instant Correcting Gel" loading="lazy"></div>
+      <div>
+        <div class="sys-step">05</div>
+        <div class="sys-name">Instant Correcting Gel</div>
+        <p class="sys-desc">Targeted spot treatment. Concentrated AHA formula (6.0%) forms an invisible film over active blemishes. Localised exfoliation accelerates resolution without affecting surrounding tissue.</p>
+        <div class="sys-meta">
+          <div class="sys-meta-row"><span class="sys-meta-label">Actives</span><span class="sys-meta-val">Hamamelis, Mandelic Acid, Succinic Acid. AHA 6.0%, pH ≥3.5</span></div>
+        </div>
+        <div class="sys-meta">
+          <div class="sys-meta-row"><span class="sys-meta-label">pH</span><span class="sys-meta-val">&ge;3.5 - concentrated spot-level exfoliation</span></div>
+        </div>
+        <div class="sys-fmt">10 ml</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== 6. BEFORE & AFTER ========== -->
+<section class="ba" id="results">
+  <div class="c">
+    <div class="ba-header rv">
+      <div class="badge">Clinical results</div>
+      <h2>What changes in 21 days</h2>
+      <p>Documented under dermatological control. 21 volunteers, ages 18-55, acne grade 1-3. 3 weeks of home products + 2 professional treatments.</p>
+    </div>
+
+    <div class="ba-timeline">
+      <div class="ba-week before rv">
+        <div class="wk">Before</div>
+        <h4>Baseline</h4>
+        <p>Excess sebum. Enlarged pores. Active breakouts. Post-inflammatory marks. Elevated cutaneous cortisol.</p>
+      </div>
+      <div class="ba-week rv rv-d1">
+        <div class="wk">Week 1</div>
+        <h4>Initial response</h4>
+        <p>Immediate mattifying effect. Tri-acid cleanse removes sebum plugs. GABA begins modulating sebaceous activity.</p>
+        <span class="ba-stat">Mattified</span>
+      </div>
+      <div class="ba-week rv rv-d2">
+        <div class="wk">Week 2</div>
+        <h4>Measurable change</h4>
+        <p>Sebum production regulating. Blackhead count reducing. Pore diameter decreasing. Tephrosia Purpurea cortisol inhibition measurable.</p>
+        <span class="ba-stat">41.5% less sebum</span>
+      </div>
+      <div class="ba-week rv rv-d3">
+        <div class="wk">Week 3</div>
+        <h4>Clinical endpoints</h4>
+        <p>51% reduction in papules and pustules. 9% pore size reduction. Post-acne marks softening. Cortisol-sebum loop disrupted.</p>
+        <span class="ba-stat">51% fewer breakouts</span>
+      </div>
+    </div>
+
+    <div class="ba-reveal rv">
+      <div class="ba-reveal-grid">
+        <div class="ba-reveal-card">
+          <img src="assets/images/before-21day.jpg" alt="Before - clinical baseline" loading="lazy">
+          <div class="ba-label"><span>Before</span></div>
+        </div>
+        <div class="ba-reveal-card after">
+          <img src="assets/images/after-21day.jpg" alt="After 21 days with Clearist CTX" loading="lazy">
+          <div class="ba-label"><span>After 21 days</span></div>
+        </div>
+      </div>
+      <div class="ba-reveal-arrow">&rarr;</div>
+    </div>
+
+    <p class="source rv" style="text-align:center;margin-top:2rem">In vivo study: Sebumetry + image analysis + clinical score. 60 Asian volunteers with oily skin, 18-35 years. 2% succinic vs. 2% salicylic and placebo. 28 days. Pore size decreased 9% (p &lt;0.1). Papules/pustules reduced 51% (p &lt;0.05). Sebum reduced 41.5% (p &lt;0.05 vs. placebo and salicylic acid).</p>
+  </div>
+</section>
+
+<!-- HEADLINE: Ingredient authority -->
+<div class="headline dark rv">
+  <div class="t1">Every other brand says "clinically proven."<br>We show you <span class="green">the actual proof.</span></div>
+  <div class="t2">Every number on this page has a peer-reviewed source. Every claim has a p-value.</div>
+  <p class="t3">4 independent studies. 60+ volunteers. Sebumetry, image analysis, clinical scoring. We don't round numbers. We don't hide methodology.</p>
+</div>
+
+<!-- ========== 7. INGREDIENTS ========== -->
+<section class="ing">
+  <div class="bg"></div>
+  <div class="c">
+    <div class="ing-header rv">
+      <div class="badge" style="background:rgba(59,184,150,.15);color:var(--g)">Active ingredients</div>
+      <h2>The active ingredients.</h2>
+      <p>6 clinically validated compounds. Each with published mechanism of action and dose-response data.</p>
+    </div>
+    <div class="ing-grid">
+
+      <!-- GABA — neural synapse visual -->
+      <div class="ig rv">
+        <div class="ig-vis">
+          <svg viewBox="0 0 64 64" fill="none">
+            <circle cx="32" cy="32" r="12" fill="#3BB896" opacity=".15"/>
+            <circle cx="32" cy="32" r="5" fill="#3BB896"/>
+            <circle cx="14" cy="18" r="3" fill="#3BB896" opacity=".5"/>
+            <circle cx="50" cy="18" r="3" fill="#3BB896" opacity=".5"/>
+            <circle cx="14" cy="46" r="3" fill="#3BB896" opacity=".5"/>
+            <circle cx="50" cy="46" r="3" fill="#3BB896" opacity=".5"/>
+            <circle cx="32" cy="8" r="2.5" fill="#3BB896" opacity=".35"/>
+            <circle cx="32" cy="56" r="2.5" fill="#3BB896" opacity=".35"/>
+            <line x1="32" y1="27" x2="32" y2="11" stroke="#3BB896" stroke-width=".8" opacity=".3"/>
+            <line x1="32" y1="37" x2="32" y2="53" stroke="#3BB896" stroke-width=".8" opacity=".3"/>
+            <line x1="27" y1="30" x2="17" y2="20" stroke="#3BB896" stroke-width=".8" opacity=".3"/>
+            <line x1="37" y1="30" x2="47" y2="20" stroke="#3BB896" stroke-width=".8" opacity=".3"/>
+            <line x1="27" y1="34" x2="17" y2="44" stroke="#3BB896" stroke-width=".8" opacity=".3"/>
+            <line x1="37" y1="34" x2="47" y2="44" stroke="#3BB896" stroke-width=".8" opacity=".3"/>
+          </svg>
+        </div>
+        <h4>Baby GABA</h4>
+        <p>Relaxes sebaceous glands without injections. The neurocosmetic that delivers Baby Botox* results topically.</p>
+        <div class="pf">Baby Botox* effect, topically</div>
+      </div>
+
+      <!-- Tephrosia — botanical leaf visual -->
+      <div class="ig rv rv-d1">
+        <div class="ig-vis">
+          <svg viewBox="0 0 64 64" fill="none">
+            <path d="M32 56V20" stroke="#3BB896" stroke-width="1.2"/>
+            <path d="M32 20C32 20 22 8 12 14C8 16.5 10 24 18 26C24 27.5 32 20 32 20Z" fill="#3BB896" opacity=".12" stroke="#3BB896" stroke-width=".8"/>
+            <path d="M32 28C32 28 42 16 52 22C56 24.5 54 32 46 34C40 35.5 32 28 32 28Z" fill="#3BB896" opacity=".12" stroke="#3BB896" stroke-width=".8"/>
+            <path d="M32 36C32 36 22 24 12 30C8 32.5 10 40 18 42C24 43.5 32 36 32 36Z" fill="#3BB896" opacity=".12" stroke="#3BB896" stroke-width=".8"/>
+            <path d="M32 44C32 44 42 32 52 38C56 40.5 54 48 46 50C40 51.5 32 44 32 44Z" fill="#3BB896" opacity=".12" stroke="#3BB896" stroke-width=".8"/>
+            <circle cx="32" cy="16" r="3" fill="#3BB896" opacity=".2"/>
+          </svg>
+        </div>
+        <h4>Tephrosia Purpurea</h4>
+        <p>Botanical extract that inhibits 70% of cortisol production in 2 hours. Targets the stress-skin axis at its source.</p>
+        <div class="pf">p &lt;0.05 at 0.5% concentration</div>
+      </div>
+
+      <!-- Zinc — mineral/element visual -->
+      <div class="ig rv rv-d2">
+        <div class="ig-vis">
+          <svg viewBox="0 0 64 64" fill="none">
+            <rect x="12" y="12" width="40" height="40" rx="8" fill="#3BB896" opacity=".08" stroke="#3BB896" stroke-width=".8"/>
+            <text x="32" y="30" text-anchor="middle" font-family="DIN 2014,sans-serif" font-weight="700" font-size="18" fill="#3BB896">Zn</text>
+            <text x="32" y="42" text-anchor="middle" font-family="DIN 2014,sans-serif" font-weight="300" font-size="7" fill="#3BB896" opacity=".5">65.38</text>
+            <text x="32" y="50" text-anchor="middle" font-family="DIN Pro,sans-serif" font-weight="400" font-size="5.5" fill="#3BB896" opacity=".35">ZINC</text>
+          </svg>
+        </div>
+        <h4>Zinc PCA + Sarcosine</h4>
+        <p>65% reduction in 5-alpha-reductase, the enzyme that causes excess oil production. Mineral-grade sebum control.</p>
+        <div class="pf">5&alpha;-reductase inhibition (p &lt;0.05)</div>
+      </div>
+
+      <!-- Succinic + Mandelic — molecular crystal visual -->
+      <div class="ig rv rv-d3">
+        <div class="ig-vis">
+          <svg viewBox="0 0 64 64" fill="none">
+            <polygon points="32,8 52,20 52,44 32,56 12,44 12,20" fill="#3BB896" opacity=".06" stroke="#3BB896" stroke-width=".8"/>
+            <polygon points="32,16 44,24 44,40 32,48 20,40 20,24" fill="#3BB896" opacity=".08" stroke="#3BB896" stroke-width=".6"/>
+            <circle cx="32" cy="32" r="4" fill="#3BB896" opacity=".2"/>
+            <circle cx="32" cy="32" r="1.5" fill="#3BB896"/>
+          </svg>
+        </div>
+        <h4>Succinic + Mandelic Acid</h4>
+        <p>Outperforms salicylic acid in clinical trials. 51% fewer breakouts with a gentler, safer exfoliation profile.</p>
+        <div class="pf">Safer, more effective alternative</div>
+      </div>
+
+      <!-- Lactococcus — microbiome visual -->
+      <div class="ig rv">
+        <div class="ig-vis">
+          <svg viewBox="0 0 64 64" fill="none">
+            <ellipse cx="20" cy="28" rx="8" ry="5" fill="#3BB896" opacity=".12" stroke="#3BB896" stroke-width=".7" transform="rotate(-15 20 28)"/>
+            <ellipse cx="40" cy="22" rx="7" ry="4.5" fill="#3BB896" opacity=".12" stroke="#3BB896" stroke-width=".7" transform="rotate(20 40 22)"/>
+            <ellipse cx="32" cy="38" rx="9" ry="5.5" fill="#3BB896" opacity=".15" stroke="#3BB896" stroke-width=".7" transform="rotate(-5 32 38)"/>
+            <ellipse cx="48" cy="40" rx="6" ry="4" fill="#3BB896" opacity=".1" stroke="#3BB896" stroke-width=".7" transform="rotate(30 48 40)"/>
+            <ellipse cx="16" cy="44" rx="7" ry="4" fill="#3BB896" opacity=".1" stroke="#3BB896" stroke-width=".7" transform="rotate(-25 16 44)"/>
+            <circle cx="20" cy="28" r="1.5" fill="#3BB896" opacity=".4"/>
+            <circle cx="40" cy="22" r="1.5" fill="#3BB896" opacity=".4"/>
+            <circle cx="32" cy="38" r="2" fill="#3BB896" opacity=".5"/>
+            <circle cx="48" cy="40" r="1.2" fill="#3BB896" opacity=".3"/>
+            <circle cx="16" cy="44" r="1.2" fill="#3BB896" opacity=".3"/>
+          </svg>
+        </div>
+        <h4>Lactococcus Lysate</h4>
+        <p>185% boost in your skin's antimicrobial defence peptides. Rebuilds the microbiome barrier that acne destroys.</p>
+        <div class="pf">Cathelicidin LL-37 expression</div>
+      </div>
+
+      <!-- Bisabolol — chamomile/soothing visual -->
+      <div class="ig rv rv-d1">
+        <div class="ig-vis">
+          <svg viewBox="0 0 64 64" fill="none">
+            <circle cx="32" cy="28" r="16" fill="#3BB896" opacity=".06"/>
+            <ellipse cx="32" cy="28" rx="4" ry="12" fill="#3BB896" opacity=".1" stroke="#3BB896" stroke-width=".6"/>
+            <ellipse cx="32" cy="28" rx="4" ry="12" fill="#3BB896" opacity=".1" stroke="#3BB896" stroke-width=".6" transform="rotate(60 32 28)"/>
+            <ellipse cx="32" cy="28" rx="4" ry="12" fill="#3BB896" opacity=".1" stroke="#3BB896" stroke-width=".6" transform="rotate(120 32 28)"/>
+            <circle cx="32" cy="28" r="4" fill="#3BB896" opacity=".2"/>
+            <circle cx="32" cy="28" r="1.8" fill="#3BB896"/>
+            <path d="M32 44V58" stroke="#3BB896" stroke-width="1" opacity=".3"/>
+            <path d="M32 50C32 50 38 46 40 42" stroke="#3BB896" stroke-width=".6" opacity=".25" fill="none"/>
+          </svg>
+        </div>
+        <h4>Bisabolol + HS Soy</h4>
+        <p>Counteracts irritation from acids and retinoids. The calming layer that lets the actives work without redness.</p>
+        <div class="pf">Reduces IL-1 cytokines</div>
+      </div>
+
+    </div>
+    <div class="ing-foot rv">
+      <p>Full methodology and citations available on request.</p>
+      <p class="source">Birkett et al., 2022 &middot; Marulanda-Gomez, 2023 &middot; Skroza et al., 2018 &middot; Brain-Skin Connection, Avon R&D, 2014</p>
+    </div>
+  </div>
+</section>
+
+<!-- ========== 8. TESTIMONIALS ========== -->
+<section class="test">
+  <div class="c">
+    <div class="test-header rv">
+      <div class="badge">Real results</div>
+      <h2>What our clients say</h2>
+    </div>
+    <div class="test-grid">
+      <div class="t-card rv">
+        <div class="t-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="t-quote">"I'd tried everything for my hormonal acne. Three weeks on the CTX system and my skin is calmer than it's been in years. The booster is genuinely different to anything I've used before."</p>
+        <div class="t-author"><div class="t-avatar"><img src="assets/images/model-lifestyle-1.jpg" alt="Sarah"></div><div><div class="t-name">Sarah R.</div><div class="t-detail">Age 34 &middot; Hormonal acne</div></div></div>
+      </div>
+      <div class="t-card rv rv-d1">
+        <div class="t-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="t-quote">"The difference after the first week was the mattifying. I didn't need blotting papers by midday for the first time in years. By week three, my pores were visibly smaller."</p>
+        <div class="t-author"><div class="t-avatar"><img src="assets/images/model-lifestyle-2.jpg" alt="Jessica"></div><div><div class="t-name">Jessica L.</div><div class="t-detail">Age 28 &middot; Combination/oily skin</div></div></div>
+      </div>
+      <div class="t-card rv rv-d2">
+        <div class="t-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="t-quote">"My dermatologist explained the GABA mechanism and I tried it. The spot corrector alone is worth the consultation. Blemishes dry in half the time."</p>
+        <div class="t-author"><div class="t-avatar"><img src="assets/images/model-lifestyle-3.jpg" alt="Michelle"></div><div><div class="t-name">Michelle K.</div><div class="t-detail">Age 41 &middot; Late-onset acne</div></div></div>
+      </div>
+    </div>
+    <div class="test-badges rv">
+      <span class="test-badge"><svg viewBox="0 0 24 24" stroke-linecap="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg> Dermatologist Tested</span>
+      <span class="test-badge"><svg viewBox="0 0 24 24" stroke-linecap="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg> Non-Comedogenic</span>
+      <span class="test-badge"><svg viewBox="0 0 24 24" stroke-linecap="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg> Professional Exclusive</span>
+    </div>
+  </div>
+</section>
+
+<!-- HEADLINE: Before FAQ -->
+<div class="headline mint rv">
+  <div class="t1">Professional channel <span class="green">only.</span></div>
+  <div class="t2">Clinical concentrations require professional assessment and protocol design.</div>
+  <p class="t3">Clearist CTX is dispensed exclusively through authorised Skeyndor skin clinics. Your therapist determines which products, what sequence, and how to integrate with existing treatments.</p>
+</div>
+
+<!-- ========== 9. FAQ ========== -->
+<section class="faq">
+  <div class="c">
+    <div class="faq-header rv"><h2>Common questions</h2></div>
+    <div class="faq-list">
+      <div class="faq-item rv">
+        <div class="faq-q"><h4>How is this different from what I can buy at Priceline or Sephora?</h4><span class="faq-icon">+</span></div>
+        <div class="faq-a"><p>Clearist CTX uses clinical-grade concentrations of active ingredients (like 10% AHA in the exfoliating lotion) that aren't available in consumer products. More importantly, it targets the stress-skin connection through GABA and Tephrosia Purpurea - ingredients specifically chosen from aesthetic medicine and psychodermatology research. It's formulated as a treatment system, not individual products.</p></div>
+      </div>
+      <div class="faq-item rv">
+        <div class="faq-q"><h4>How long until I see results?</h4><span class="faq-icon">+</span></div>
+        <div class="faq-a"><p>Mattifying effect is immediate - from the first application. Visible pore refinement and sebum regulation typically appear within 1-2 weeks. Full clinical results (reduced breakouts, softened marks) were documented at 3 weeks in the dermatological control study. Your skin therapist will set realistic expectations based on your specific skin grade.</p></div>
+      </div>
+      <div class="faq-item rv">
+        <div class="faq-q"><h4>Is it suitable for sensitive skin?</h4><span class="faq-icon">+</span></div>
+        <div class="faq-a"><p>The range includes both active treatment products (foam, exfoliant, booster) and soothing products (gel-emulsion with Bisabolol and HS Soy Extract). The gel-emulsion is specifically designed to calm irritation from acids. Your consultation will determine the right protocol for your sensitivity level - you may start with fewer steps and build up.</p></div>
+      </div>
+      <div class="faq-item rv">
+        <div class="faq-q"><h4>Can I use this with my current skincare routine?</h4><span class="faq-icon">+</span></div>
+        <div class="faq-a"><p>CTX works best as a complete system. That said, your skin therapist can advise on integration with specific products you're already using (like prescription retinoids or SPF). The gel-emulsion actually helps counteract irritation from other active treatments.</p></div>
+      </div>
+      <div class="faq-item rv">
+        <div class="faq-q"><h4>Do I need a prescription?</h4><span class="faq-icon">+</span></div>
+        <div class="faq-a"><p>No prescription needed. CTX is professional-grade cosmeceutical skincare available through authorised Skeyndor skin clinics and stockists. A free consultation ensures you get the right protocol for your skin type and concerns.</p></div>
+      </div>
+      <div class="faq-item rv">
+        <div class="faq-q"><h4>What does the consultation involve?</h4><span class="faq-icon">+</span></div>
+        <div class="faq-a"><p>A free 15-minute session (in-salon or virtual) with a qualified Skeyndor skin therapist. They'll assess your skin type, acne grade, lifestyle factors, and current routine to build a personalised CTX protocol. No obligation to purchase.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== 10. BREAK THE CYCLE ========== -->
+<section class="brk" id="break">
+  <div class="c">
+    <div class="brk-header rv">
+      <div class="badge" style="background:rgba(59,184,150,.15);color:var(--g)">The philosophy</div>
+      <h2>Other brands treat symptoms.<br>We break the cycle.</h2>
+      <p>The stress-acne-stress loop keeps skin stuck. Clearist CTX interrupts it at every stage.</p>
+    </div>
+
+    <!-- The cycle — shown as a clear horizontal flow -->
+    <div class="cycle-flow rv" id="cycleEl">
+      <div class="cycle-stage">
+        <div class="cy-label">Stress</div>
+        <div class="cy-sub">Cortisol floods your skin</div>
+      </div>
+      <div class="cycle-arrow">&rarr;</div>
+      <div class="cycle-stage">
+        <div class="cy-label">Sebum</div>
+        <div class="cy-sub">Oil production spikes</div>
+      </div>
+      <div class="cycle-arrow">&rarr;</div>
+      <div class="cycle-stage">
+        <div class="cy-label">Breakouts</div>
+        <div class="cy-sub">Pores clog, skin inflames</div>
+      </div>
+      <div class="cycle-arrow">&rarr;</div>
+      <div class="cycle-stage">
+        <div class="cy-label">Anxiety</div>
+        <div class="cy-sub">Confidence drops, stress rises</div>
+      </div>
+      <div class="cycle-arrow">&rarr;</div>
+      <div class="cycle-stage">
+        <div class="cy-label">Repeat</div>
+        <div class="cy-sub">The cycle feeds itself</div>
+      </div>
+    </div>
+
+    <!-- The intervention — 5 products mapped to what they break -->
+    <div class="brk-intervention">
+      <div class="brk-step">
+        <div class="bs-num">1</div>
+        <div class="bs-name">Cleansing Foam</div>
+        <div class="bs-does">Strips pore-blocking debris</div>
+      </div>
+      <div class="brk-step">
+        <div class="bs-num">2</div>
+        <div class="bs-name">Exfoliating Lotion</div>
+        <div class="bs-does">Controls cortisol + refines</div>
+      </div>
+      <div class="brk-step">
+        <div class="bs-num">3</div>
+        <div class="bs-name">GBX Booster</div>
+        <div class="bs-does">Shuts down excess sebum</div>
+      </div>
+      <div class="brk-step">
+        <div class="bs-num">4</div>
+        <div class="bs-name">Gel-Emulsion</div>
+        <div class="bs-does">Calms inflammation</div>
+      </div>
+      <div class="brk-step">
+        <div class="bs-num">5</div>
+        <div class="bs-name">Correcting Gel</div>
+        <div class="bs-does">Targets active blemishes</div>
+      </div>
+    </div>
+
+    <div class="brk-cta">
+      <h3>Break <em>yours.</em></h3>
+      <a href="mailto:care@skeyndor.com.au?subject=Clearist%20CTX%20Consultation&body=Hi%2C%20I'd%20like%20to%20book%20a%20free%20skin%20consultation." class="btn btn-glow">Start My Free Consultation</a>
+      <p class="cta-sub" style="color:rgba(255,255,255,.35)">Free. 15 minutes. No obligation.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ========== FINAL CTA ========== -->
+<section class="final">
+  <div class="ring"></div>
+  <div class="c inner rv">
+    <div class="badge">Clearist CTX</div>
+    <h2>Clinical-grade acne care.<br>Professional guidance.</h2>
+    <p>Clearist CTX is available through authorised Skeyndor skin clinics across Australia. Your consultation is free.</p>
+    <div class="btns" style="justify-content:center">
+      <a href="mailto:care@skeyndor.com.au?subject=Clearist%20CTX%20Consultation&body=Hi%2C%20I'd%20like%20to%20book%20a%20free%20skin%20consultation." class="btn btn-p">Start My Free Consultation</a>
+      <a href="mailto:care@skeyndor.com.au?subject=Find%20Clearist%20CTX%20Stockist" class="btn btn-o">Find a Stockist</a>
+    </div>
+    <p class="cta-sub">Free consultation. In-salon or virtual. No obligation.</p>
+    <div class="logo-end"><img src="assets/images/logo.png" alt="Skeyndor"></div>
+  </div>
+</section>
+
+<!-- STICKY CTA BAR -->
+<div class="sticky-cta" id="stickyCta">
+  <span class="sticky-cta-text"><span>51% fewer breakouts</span> in 28 days.</span>
+  <a href="mailto:care@skeyndor.com.au?subject=Clearist%20CTX%20Consultation&body=Hi%2C%20I'd%20like%20to%20book%20a%20free%20skin%20consultation." class="btn btn-p" style="padding:.65rem 1.6rem;font-size:.78rem">Book Free Consultation</a>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="c">
+    <img src="assets/images/logo.png" alt="Skeyndor">
+    <p>*The term Baby Botox is used exclusively in reference to the cosmetic mechanism that reproduces the effects obtained with botulinum toxin type A.</p>
+    <p style="margin-top:.4rem">&copy; 2026 Skeyndor Australia &middot; Science creates beauty.</p>
+  </div>
+</footer>
+
+<!-- ========== JS ========== -->
+<script>
+  // ========== PASSWORD GATE ==========
+  const gate=document.getElementById('gate');
+  const gateInput=document.getElementById('gateInput');
+  gateInput.addEventListener('input',function(){
+    const v=this.value.toLowerCase().trim();
+    if(v.length===3){
+      if(v==='ctx'){
+        gate.classList.add('unlocked');
+        document.body.classList.remove('locked');
+        setTimeout(()=>gate.style.display='none',900);
+      } else {
+        this.classList.add('wrong');
+        setTimeout(()=>{this.classList.remove('wrong');this.value='';},500);
+      }
+    }
+  });
+  // Also handle enter key
+  gateInput.addEventListener('keydown',function(e){if(e.key==='Enter'){const v=this.value.toLowerCase().trim();if(v!=='ctx'&&v.length>0){this.classList.add('wrong');setTimeout(()=>{this.classList.remove('wrong');this.value='';},500)}}});
+
+  // ========== REVEAL ON SCROLL ==========
+  const obs=new IntersectionObserver(e=>{e.forEach(i=>{if(i.isIntersecting){i.target.classList.add('v');i.target.querySelectorAll('[data-count]').forEach(c=>countUp(c));if(i.target.dataset.count)countUp(i.target)}})},{threshold:.1,rootMargin:'0px 0px -30px 0px'});
+  document.querySelectorAll('.rv').forEach(e=>obs.observe(e));
+  document.querySelectorAll('[data-count]').forEach(e=>obs.observe(e));
+
+  // ========== COUNTER ==========
+  const counted=new Set();
+  function countUp(el){if(counted.has(el))return;counted.add(el);const t=+el.dataset.count,pct=el.textContent.includes('%'),d=1300,s=performance.now();(function f(n){const p=Math.min((n-s)/d,1),e=1-Math.pow(1-p,3);el.textContent=Math.round(e*t)+(pct?'%':'');p<1?requestAnimationFrame(f):el.textContent=t+(pct?'%':'')})(s)}
+
+  // ========== NAV ==========
+  const nav=document.getElementById('nav');
+  addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>60),{passive:true});
+
+  // ========== STICKY CTA BAR ==========
+  const stickyCta=document.getElementById('stickyCta');
+  const heroSection=document.querySelector('.hero');
+  const finalSection=document.querySelector('.final');
+  addEventListener('scroll',()=>{
+    const pastHero=scrollY>heroSection.offsetHeight;
+    const atFooter=finalSection&&(scrollY+innerHeight)>finalSection.offsetTop;
+    stickyCta.classList.toggle('show',pastHero&&!atFooter);
+  },{passive:true});
+
+  // ========== BREAK THE CYCLE ==========
+  const brkSection=document.querySelector('.brk');
+  const brkObs=new IntersectionObserver(e=>{e.forEach(i=>{if(i.isIntersecting&&i.intersectionRatio>.25){setTimeout(()=>brkSection.classList.add('active'),600);brkObs.unobserve(i.target)}})},{threshold:.25});
+  brkObs.observe(brkSection);
+
+  // ========== SMOOTH SCROLL ==========
+  document.querySelectorAll('a[href^="#"]').forEach(a=>a.addEventListener('click',e=>{e.preventDefault();const t=document.querySelector(a.getAttribute('href'));if(t)t.scrollIntoView({behavior:'smooth'})}));
+
+  // ========== HERO PARALLAX ==========
+  const ring=document.querySelector('.hero-ring');
+  addEventListener('scroll',()=>{if(scrollY<innerHeight){const p=scrollY/innerHeight;ring.style.transform=`translate(-50%,calc(-50% + ${p*50}px)) scale(${1+p*.12})`;ring.style.opacity=1-p*.65}},{passive:true});
+
+  // ========== FAQ ACCORDION ==========
+  document.querySelectorAll('.faq-q').forEach(q=>q.addEventListener('click',()=>{const item=q.closest('.faq-item');document.querySelectorAll('.faq-item').forEach(i=>{if(i!==item)i.classList.remove('open')});item.classList.toggle('open')}));
+</script>
+</body>
+</html>
